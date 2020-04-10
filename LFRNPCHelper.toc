@@ -1,0 +1,7 @@
+## Interface: 80300
+## Title: LFRNPCHelper
+## Notes: Shows raid name and bosses instead of gibberish.
+## Version: 1.0
+## Author: Haselnussbomber
+
+LFRNPCHelper.lua
