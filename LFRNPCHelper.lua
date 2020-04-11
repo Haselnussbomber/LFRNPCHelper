@@ -226,10 +226,10 @@ else
 	addOption(0, 1176, { 2333, 2325, 2341 })
 end
 
--- Option 5 | Death's Bargain (Alliance): Opulence (2342), Conclave of the Chosen (2330), King Rastakhan (2335)
+-- Option 5 | Empire's Fall (Alliance) / Death's Bargain (Horde): Opulence (2342), Conclave of the Chosen (2330), King Rastakhan (2335)
 addOption(0, 1176, { 2342, 2330, 2335 })
 
--- Option 6 | Victory or Death (Alliance): High Tinker Mekkatorque (2334), Stormwall Blockade (2337), Lady Jaina Proudmoore (2343)
+-- Option 6 | Might of the Alliance (Alliance) / Victory or Death (Horde): High Tinker Mekkatorque (2334), Stormwall Blockade (2337), Lady Jaina Proudmoore (2343)
 addOption(0, 1176, { 2334, 2337, 2343 })
 
 
