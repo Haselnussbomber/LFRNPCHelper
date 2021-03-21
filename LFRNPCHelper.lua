@@ -1,4 +1,5 @@
 local npcData = {}
+local isAlliance = UnitFactionGroup("player") == "Alliance"
 
 local function addOption(npcId, instanceId, encounterIds)
 	if not npcData[npcId] then
@@ -199,75 +200,74 @@ addOption(111246, 946, { 1984, 2031 })
 
 
 
---[[
------------------------------------
--- NPC Name (Battle for Azeroth) --
------------------------------------
+----------------------------------------------
+-- Kiku (A) / Eppu (H) (Battle for Azeroth) --
+----------------------------------------------
+local bfaNPCID = isAlliance and 177193 or 177208
 
 -- Uldir (1031) --
 
 -- Option 1 | Halls of Containment: Taloc(2168), MOTHER (2167), Zek'voz, Herald of N'Zoth (2169)
-addOption(0, 1031, { 2168, 2167, 2169 })
+addOption(bfaNPCID, 1031, { 2168, 2167, 2169 })
 
 -- Option 2 | Crimson Descent: Fetid Devourer (2146), Vectis (2166), Zul, Reborn (2195)
-addOption(0, 1031, { 2146, 2166, 2195 })
+addOption(bfaNPCID, 1031, { 2146, 2166, 2195 })
 
 -- Option 3 | Heart of Corruption: Mythrax the Unraveler (2194), G'huun (2147)
-addOption(0, 1031, { 2194, 2147 })
+addOption(bfaNPCID, 1031, { 2194, 2147 })
 
 
 -- Battle of Dazar'alor (1176) --
 
-if UnitFactionGroup("player") == "Alliance" then
+if isAlliance then
 	-- Option 4 | Siege of Dazar'alor (Alliance): Champion of the Light (2333), Jadefire Masters (2341), Grong, the Jungle Lord (2325)
-	addOption(0, 1176, { 2333, 2341, 2325 })
+	addOption(bfaNPCID, 1176, { 2333, 2341, 2325 })
 else
 	-- Option 4 | Defense of Dazar'alor (Horde): Champion of the Light (2333), Grong, the Jungle Lord (2325), Jadefire Masters (2341)
-	addOption(0, 1176, { 2333, 2325, 2341 })
+	addOption(bfaNPCID, 1176, { 2333, 2325, 2341 })
 end
 
 -- Option 5 | Empire's Fall (Alliance) / Death's Bargain (Horde): Opulence (2342), Conclave of the Chosen (2330), King Rastakhan (2335)
-addOption(0, 1176, { 2342, 2330, 2335 })
+addOption(bfaNPCID, 1176, { 2342, 2330, 2335 })
 
 -- Option 6 | Might of the Alliance (Alliance) / Victory or Death (Horde): High Tinker Mekkatorque (2334), Stormwall Blockade (2337), Lady Jaina Proudmoore (2343)
-addOption(0, 1176, { 2334, 2337, 2343 })
+addOption(bfaNPCID, 1176, { 2334, 2337, 2343 })
 
 
 -- Crucible of Storms (1177) --
 
 -- Option 7 | The Restless Cabal (2328), Uu'nat, Harbinger of the Void (2332)
-addOption(0, 1177, { 2328, 2332 })
+addOption(bfaNPCID, 1177, { 2328, 2332 })
 
 
 -- The Eternal Palace (1179) --
 
 -- Option 8 | The Grand Reception: Abyssal Commander Sivara (2352), Blackwater Behemoth (2347), Radiance of Azshara (2353)
-addOption(0, 1179, { 2352, 2347, 2353 })
+addOption(bfaNPCID, 1179, { 2352, 2347, 2353 })
 
 -- Option 9 | Depths of the Devoted: Lady Ashvane (2354), Orgozoa (2351), The Queen's Court (2359)
-addOption(0, 1179, { 2354, 2351, 2359 })
+addOption(bfaNPCID, 1179, { 2354, 2351, 2359 })
 
 -- Option 10 | The Circle of Stars: Za'qul, Harbinger of Ny'alotha (2349), Queen Azshara (2361)
-addOption(0, 1179, { 2349, 2361 })
+addOption(bfaNPCID, 1179, { 2349, 2361 })
 
 
 -- The Eternal Palace (1180) --
 
 -- Option 11 | Vision of Destiny: Wrathion, the Black Emperor (2368), Maut (2365), The Prophet Skitra (2369)
-addOption(0, 1180, { 2368, 2365, 2369 })
+addOption(bfaNPCID, 1180, { 2368, 2365, 2369 })
 
 -- Option 12 | Halls of Devotion: Dark Inquisitor Xanesh (2377), Vexiona (2370), The Hivemind (2372), Ra-den the Despoiled (2364)
-addOption(0, 1180, { 2377, 2370, 2372, 2364 })
+addOption(bfaNPCID, 1180, { 2377, 2370, 2372, 2364 })
 
 -- Option 13 | Gift of Flesh: Shad'har the Insatiable (2367), Drest'agath (2373), Il'gynoth, Corruption Reborn (2374)
-addOption(0, 1180, { 2367, 2373, 2374 })
+addOption(bfaNPCID, 1180, { 2367, 2373, 2374 })
 
 -- Option 14 | The Waking Dream: Carapace of N'Zoth (2366), N'Zoth the Corruptor (2375)
-addOption(0, 1180, { 2366, 2375 })
---]]
+addOption(bfaNPCID, 1180, { 2366, 2375 })
 
 
-hooksecurefunc("GossipFrameOptionsUpdate", function(...)
+hooksecurefunc("GossipFrameOptionsUpdate", function()
 	if not UnitExists("npc") then return end
 
 	local guid = UnitGUID("npc")
@@ -279,9 +279,9 @@ hooksecurefunc("GossipFrameOptionsUpdate", function(...)
 	local overrides = npcData[npcID]
 	if not overrides then return end
 
-	local titleIndex = 1
-	for i=1, select("#", ...), 2 do
-		local titleButton = _G["GossipTitleButton" .. titleIndex]
+	local gossipOptions = C_GossipInfo.GetOptions()
+	for titleIndex, optionInfo in ipairs(gossipOptions) do
+		local titleButton = GossipFrame_GetTitleButton(titleIndex)
 		local override = overrides[titleButton:GetID()]
 		if override then
 			local instanceId = override[1]
@@ -301,7 +301,7 @@ hooksecurefunc("GossipFrameOptionsUpdate", function(...)
 
 			local instanceName = EJ_GetInstanceInfo(instanceId)
 			titleButton:SetText("[" .. instanceName .. "]\n" .. str)
-			GossipResize(titleButton)
+			titleButton:Resize()
 		end
 		titleIndex = titleIndex + 1
 	end
