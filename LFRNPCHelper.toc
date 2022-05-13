@@ -1,7 +1,7 @@
-## Interface: 90005
+## Interface: 90200
 ## Title: LFR NPC Helper
 ## Notes: Instead of wing names it changes dialog options to show raid name, bosses and if they are defeated.
-## Version: 1.1
+## Version: @project-version@
 ## Author: Haselnussbomber
 
 LFRNPCHelper.lua
