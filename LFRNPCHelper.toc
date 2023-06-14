@@ -3,5 +3,6 @@
 ## Notes: Instead of wing names it changes dialog options to show raid name, bosses and if they are defeated.
 ## Version: @project-version@
 ## Author: Haselnussbomber
+## IconAtlas: socialqueuing-icon-eye
 
 LFRNPCHelper.lua
