@@ -261,55 +261,53 @@ local gossipOptions = {
 	[52319] = { 1180, { 2366, 2375 } },
 
 
---[[
-	---------------------
-	-- ? (Shadowlands) --
-	---------------------
+	----------------------------
+	-- Ta'elfar (Shadowlands) --
+	----------------------------
 
 	-- Castle Nathria (1190) --
 
 	-- Option 1 | The Leeching Vaults: Huntsman Altimor (2429), Hungering Destroyer (2428), Lady Inerva Darkvein (2420)
-	[?] = { 1190, { 2429, 2428, 2420 } },
+	[110020] = { 1190, { 2429, 2428, 2420 } },
 
 	-- Option 2 | Reliquary of Opulence: Sun King's Salvation (2422), Artificer Xy'mox (2418), The Council of Blood (2426)
-	[?] = { 1190, { 2422, 2418, 2426 } },
+	[110037] = { 1190, { 2422, 2418, 2426 } },
 
-	-- Option 3 | Blood from Stone: Shriekwing (2394), Sludgefist (2394), Stone Legion Generals (2425)
-	[?] = { 1190, { 2394, 2394, 2425 } },
+	-- Option 3 | Blood from Stone: Shriekwing (2393), Sludgefist (2394), Stone Legion Generals (2425)
+	[110036] = { 1190, { 2393, 2394, 2425 } },
 
-	-- Option 3 | An Audience with Arrogance: Sire Denathrius (2424)
-	[?] = { 1190, { 2424 } },
+	-- Option 4 | An Audience with Arrogance: Sire Denathrius (2424)
+	[110035] = { 1190, { 2424 } },
 
 
 	-- Sanctum of Domination (1193) --
 
-	-- Option 4 | The Jailer's Vanguard: Tarragrue (2435), Eye of the Jailer (2442), The Nine (2439)
-	[?] = { 1193, { 2435, 2442, 2439 } },
+	-- Option 5 | The Jailer's Vanguard: Tarragrue (2435), Eye of the Jailer (2442), The Nine (2439)
+	[110034] = { 1193, { 2435, 2442, 2439 } },
 
-	-- Option 5 | The Dark Bastille: Soulrender Dormazain (2445), Remnant of Ner'zhul (2444), Painsmith Raznal (2443)
-	[?] = { 1193, { 2445, 2444, 2443 } },
+	-- Option 6 | The Dark Bastille: Soulrender Dormazain (2445), Remnant of Ner'zhul (2444), Painsmith Raznal (2443)
+	[110033] = { 1193, { 2445, 2444, 2443 } },
 
-	-- Option 6 | Shackles of Fate: Guardian of the First Ones (2446), Fatescribe Roh-Kalo (2447), Kel'Thuzad (2440)
-	[?] = { 1193, { 2446, 2447, 2440 } },
+	-- Option 7 | Shackles of Fate: Guardian of the First Ones (2446), Fatescribe Roh-Kalo (2447), Kel'Thuzad (2440)
+	[110032] = { 1193, { 2446, 2447, 2440 } },
 
-	-- Option 7 | The Reckoning: Sylvanas Windrunner (2441)
-	[?] = { 1193, { 2441 } },
+	-- Option 8 | The Reckoning: Sylvanas Windrunner (2441)
+	[110031] = { 1193, { 2441 } },
 
 
 	-- Sepulcher of the First Ones (1195) --
 
-	-- Option 8 | Ephemeral Plains: Vigilant Guardian (2458), Skolex, the Insatiable Ravener (2465), Artificer Xy'mox (2470), Halondrus the Reclaimer (2463)
-	[?] = { 1195, { 2458, 2465, 2470, 2463 } },
-
 	-- Option 9 | Cornerstone of Creation: Dausegne, the Fallen Oracle (2459), Prototype Pantheon (2460), Lihuvim, Principal Architect (2461)
-	[?] = { 1195, { 2459, 2460, 2461 } },
+	[110030] = { 1195, { 2459, 2460, 2461 } },
 
-	-- Option 10 | Domination's Grasp: Anduin Wrynn (2469), Lords of Dread (2457), Rygelon (2467)
-	[?] = { 1195, { 2469, 2457, 2467 } },
+	-- Option 10 | Ephemeral Plains: Vigilant Guardian (2458), Skolex, the Insatiable Ravener (2465), Artificer Xy'mox (2470), Halondrus the Reclaimer (2463)
+	[110029] = { 1195, { 2458, 2465, 2470, 2463 } },
 
-	-- Option 11 | The Grand Design: The Jailer (2464)
-	[?] = { 1195, { 2464 } },
---]]
+	-- Option 11 | Domination's Grasp: Anduin Wrynn (2469), Lords of Dread (2457), Rygelon (2467)
+	[110028] = { 1195, { 2469, 2457, 2467 } },
+
+	-- Option 12 | The Grand Design: The Jailer (2464)
+	[110027] = { 1195, { 2464 } },
 
 };
 
